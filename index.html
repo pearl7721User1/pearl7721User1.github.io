@@ -5,7 +5,24 @@
     <script>
         
         function myFunction() {
-            window.location.href = 'vlogrPluginData://'; // open('vlogrPluginData://', '_blank');
+            
+
+            const returnJson = {
+            action: 'create',
+            type: 'type',
+             file: 'file',
+              mp4: 'mp4',
+              fileSize: 'filesize',
+            };
+
+            var myString = "";
+            for (const [key, value] of Object.entries(object)) {
+                myString = myString + key;
+                console.log(key, value);
+                
+            }
+
+            window.location.href = 'vlogrPluginData://' + myString; // open('vlogrPluginData://', '_blank');
         }
     </script>
 
