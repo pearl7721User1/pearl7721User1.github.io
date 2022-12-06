@@ -15,14 +15,9 @@
               fileSize: 'filesize',
             };
 
-            var myString = "";
-            for (const [key, value] of Object.entries(returnJson)) {
-                myString = myString + key;
-                console.log(key, value);
-                
-            }
+            var paramString = Object.entries(returnJson).map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
 
-            window.location.href = 'vlogrPluginData://' + myString; // open('vlogrPluginData://', '_blank');
+            window.location.href = 'vlogrPluginData://' + paramString; // open('vlogrPluginData://', '_blank');
         }
     </script>
 
