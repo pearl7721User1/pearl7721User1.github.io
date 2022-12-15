@@ -23,11 +23,11 @@
             var webkit = !!ua.match(/WebKit/i);
             var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
 
-            if (iOSSafari) {
+//            if (iOSSafari) {
                 let currentLocation = window.location.href;
                 window.location.href = 'vlogrPluginData://' + paramString; // open('vlogrPluginData://', '_blank');
 //                winndow.location = currentLocation;
-            }
+//            }
             
 
             
