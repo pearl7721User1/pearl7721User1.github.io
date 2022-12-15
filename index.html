@@ -31,7 +31,7 @@
 //                winndow.location = currentLocation;
 //            }
             */
-           if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+           if (ua.match(/iPad/i) || ua.match(/iPhone/i)) {
                 // iPad or iPhone
                 let currentLocation = window.location.href;
                 window.location.href = 'vlogrPluginData://' + paramString; // open('vlogrPluginData://', '_blank');
