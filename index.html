@@ -31,6 +31,12 @@
 //                winndow.location = currentLocation;
 //            }
             */
+
+            alert(ua);
+            var isMatchIpad = ua.match(/iPad/i);
+            alert(isMatchIpad);
+
+
            if (ua.match(/iPad/i) || ua.match(/iPhone/i)) {
                 // iPad or iPhone
                 let currentLocation = window.location.href;
