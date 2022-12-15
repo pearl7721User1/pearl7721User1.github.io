@@ -19,6 +19,8 @@
 
 
             var ua = window.navigator.userAgent;
+
+            /*
             var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
             var webkit = !!ua.match(/WebKit/i);
             var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
@@ -28,8 +30,16 @@
                 window.location.href = 'vlogrPluginData://' + paramString; // open('vlogrPluginData://', '_blank');
 //                winndow.location = currentLocation;
 //            }
-            
+            */
+           if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+                // iPad or iPhone
+                let currentLocation = window.location.href;
+                window.location.href = 'vlogrPluginData://' + paramString; // open('vlogrPluginData://', '_blank');
+            }
+            else {
+               // Anything else
 
+            }
             
            
 
