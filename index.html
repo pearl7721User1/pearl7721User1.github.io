@@ -18,7 +18,13 @@
             var paramString = Object.entries(returnJson).map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
 
 
-            var ua = window.navigator.userAgent;
+            function iOS() {
+                  return ['iPad Simulator','iPhone Simulator','iPod Simulator','iPad','iPhone','iPod'].includes(navigator.platform)
+                 // iPad on iOS 13 detection
+                  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+            }
+
+//            var ua = window.navigator.userAgent;
 
             /*
             var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
@@ -32,12 +38,7 @@
 //            }
             */
 
-            alert(ua);
-            var isMatchIpad = ua.match(/iPad/i);
-            alert(isMatchIpad);
-
-
-           if (ua.match(/iPad/i) || ua.match(/iPhone/i)) {
+           if (iOS()) {
                 // iPad or iPhone
                 let currentLocation = window.location.href;
                 window.location.href = 'vlogrPluginData://' + paramString; // open('vlogrPluginData://', '_blank');
@@ -50,6 +51,8 @@
            
 
         }
+
+        
     </script>
 
 </head>
@@ -58,7 +61,7 @@
 <body>
     hello world
     
-    <button onclick="myFunction()">Click mee</button>
+    <button onclick="myFunction()">Click meee</button>
 </body>
 
 </html>
